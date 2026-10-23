@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d12">
+  <meta name="description" content="Uma experiência cinematográfica pelos 25 marcos da vida de Tiago White, de 1821 a 1881. SPOT, PG da IASD de Pinheiros.">
+  <meta property="og:title" content="Tiago White — Uma história em selos">
+  <meta property="og:description" content="25 marcos. Uma vida de fé. Conheça a história por trás de cada selo.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/selos/01.svg">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+  <title>Tiago White — Uma história em selos · SPOT</title>
+</head>
+<body>
+  <a class="skip-link" href="#story-title">Ir para a história</a>
+  <div class="ambient" aria-hidden="true"><div class="ambient-orb"></div><div class="ambient-grid"></div></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#marco-01" aria-label="SPOT — voltar ao primeiro marco">
+        <span class="brand-symbol" aria-hidden="true"></span>
+        <span class="brand-name">SPOT<span class="brand-sub">PG DA IASD DE PINHEIROS</span></span>
+      </a>
+      <div class="archive-label"><span class="status-dot"></span> ARQUIVO VIVO <span class="archive-slash">/</span> 1821–1881</div>
+      <div class="header-actions">
+        <button class="control mode-control" id="mode-button" type="button" aria-pressed="false" title="Ocultar cada selo até o grupo identificá-lo">
+          <span class="switch" aria-hidden="true"><span></span></span><span>Dinâmica</span>
+        </button>
+        <button class="icon-control" id="fullscreen-button" type="button" aria-label="Entrar em tela cheia" title="Tela cheia · F">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg>
+        </button>
+        <button class="control index-control" id="index-button" type="button" aria-label="Os 25 marcos" aria-haspopup="dialog"><span class="grid-icon" aria-hidden="true"></span><span>Os 25 marcos</span></button>
+      </div>
+    </header>
+
+    <main class="scene" id="scene" aria-label="Linha do tempo de Tiago White">
+      <section class="visual-column" aria-label="Selo do marco atual">
+        <div class="visual-heading"><span>UMA HISTÓRIA EM SELOS</span><span id="visual-number">001 / 025</span></div>
+        <div class="stamp-stage" id="stamp-stage">
+          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="stamp-frame" id="stamp-frame">
+            <i class="corner top-left" aria-hidden="true"></i><i class="corner top-right" aria-hidden="true"></i>
+            <i class="corner bottom-left" aria-hidden="true"></i><i class="corner bottom-right" aria-hidden="true"></i>
+            <figure class="stamp-figure" id="stamp-figure"><img id="stamp-image" src="assets/selos/01.svg" alt="Selo do nascimento de Tiago White, em 1821" width="600" height="600" fetchpriority="high"></figure>
+            <div class="concealed" id="concealed" hidden>
+              <div class="unknown-seal" aria-hidden="true"><span>?</span></div>
+              <span class="concealed-label">UM FRAGMENTO A RECONHECER</span>
+              <p>Quem está com<br>este selo?</p>
+              <button type="button" class="reveal-button" id="reveal-button">Revelar selo <span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="scan-line" id="scan-line" aria-hidden="true"></div>
+          </div>
+          <span class="stamp-axis axis-top" aria-hidden="true">+ MEMÓRIA / 01</span>
+          <span class="stamp-axis axis-bottom" aria-hidden="true">PRESERVAR · RECONHECER · CONTINUAR</span>
+        </div>
+        <div class="visual-footer"><span class="tiny-diamond" aria-hidden="true"></span><span id="location-label">PALMYRA · MAINE</span><span class="location-line" aria-hidden="true"></span></div>
+      </section>
+
+      <section class="story-column" id="story-column" aria-labelledby="story-title" aria-live="polite" aria-atomic="false">
+        <div class="year-ghost" id="year-ghost" aria-hidden="true">1821</div>
+        <div class="story-body" id="story-body">
+          <div class="chapter-line"><span class="chapter-square" aria-hidden="true"></span><span id="chapter-label">01 — ORIGEM</span><span class="chapter-dash" aria-hidden="true"></span><span class="story-number" id="story-number">MARCO 01</span></div>
+          <p class="story-date" id="story-date">04 AGO 1821</p>
+          <h1 id="story-title" tabindex="-1">Nasce Tiago<br>Springer White.</h1>
+          <p class="story-lead" id="story-lead">Em uma fazenda do Maine, começa a vida de um dos futuros fundadores do adventismo sabatista.</p>
+          <p class="story-summary" id="story-summary">Uma família de nove filhos. Uma infância rural. Uma história que ainda não revelava o alcance que teria.</p>
+          <button class="read-more" id="details-button" type="button" aria-haspopup="dialog"><span class="plus-icon" aria-hidden="true">+</span> Por dentro deste momento <span class="read-arrow" aria-hidden="true">↗</span></button>
+          <div class="story-connection"><span class="connection-label" id="connection-label">O PRÓXIMO PASSO</span><p id="connection-text">Os primeiros obstáculos chegariam ainda na infância.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <main class="gathering-scene" id="gathering-scene" aria-labelledby="gathering-title" hidden>
+      <section class="gathering-visual" aria-label="Foto do encontro do SPOT">
+        <div class="visual-heading"><span>MEMÓRIA DO ENCONTRO</span><span>SPOT / 2026</span></div>
+        <figure class="gathering-memory">
+          <div class="gathering-photo-frame">
+            <i class="corner top-left" aria-hidden="true"></i><i class="corner top-right" aria-hidden="true"></i>
+            <i class="corner bottom-left" aria-hidden="true"></i><i class="corner bottom-right" aria-hidden="true"></i>
+            <img id="gathering-photo" alt="Participantes do SPOT no encontro de 23 de outubro de 2026, na IASD de Pinheiros" width="1600" height="1200" hidden>
+            <div class="gathering-placeholder" id="gathering-placeholder">
+              <div class="gathering-viewfinder" aria-hidden="true">
+                <svg viewBox="0 0 64 48" fill="none"><path d="M6 15h12l5-7h18l5 7h12v27H6z"/><circle cx="32" cy="27" r="9"/><path d="M49 21h3"/></svg>
+              </div>
+              <p>Nosso encontro,<br>uma lembrança.</p>
+              <span>A foto deste dia vai morar aqui.</span>
+            </div>
+          </div>
+          <figcaption><span>23 DE OUTUBRO DE 2026</span><span>UMA HISTÓRIA PARA GUARDAR</span></figcaption>
+        </figure>
+      </section>
+      <section class="gathering-copy">
+        <div class="chapter-line"><span class="chapter-square" aria-hidden="true"></span><span>A HISTÓRIA CONTINUA</span></div>
+        <p class="story-date">23 OUT 2026</p>
+        <h1 id="gathering-title" tabindex="-1">Agora, nós também<br>fazemos parte.</h1>
+        <p class="story-lead">Os selos contam uma história de fé. Este espaço vai guardar os rostos de quem a compartilhou neste encontro.</p>
+        <p class="story-summary">Cada pessoa leva um selo. Juntos, guardamos a lembrança de estar aqui.</p>
+        <div class="gathering-signature"><span class="brand-symbol" aria-hidden="true"></span><div><strong>SPOT</strong><span>PG DA IASD DE PINHEIROS</span></div></div>
+      </section>
+    </main>
+
+    <footer class="timeline-footer">
+      <div class="timeline-track"><span class="track-year">1821</span><nav class="timeline-markers" id="timeline-markers" aria-label="Navegar pelos 25 marcos"></nav><span class="track-year">1881</span></div>
+      <div class="navigation-row">
+        <button class="nav-button previous" id="previous-button" type="button" disabled><span aria-hidden="true">←</span><span>Anterior</span></button>
+        <div class="journey-status"><span class="journey-count"><strong id="current-count">01</strong><span> / 25</span></span><span class="journey-label" id="journey-label">ORIGEM</span></div>
+        <div class="keyboard-hint" id="keyboard-hint"><kbd>←</kbd><kbd>→</kbd><span>PARA EXPLORAR</span></div>
+        <button class="nav-button next" id="next-button" type="button"><span id="next-text">Próximo marco</span><span aria-hidden="true">→</span></button>
+      </div>
+      <div class="footer-fineprint"><span>TIAGO WHITE <span class="fine-dot">·</span> UMA VIDA DE FÉ</span><button type="button" id="gathering-button" class="gathering-link">NOSSO ENCONTRO <span aria-hidden="true">↗</span></button><button type="button" id="about-button">SPOT / 23.10.2026 <span aria-hidden="true">↗</span></button></div>
+    </footer>
+  </div>
+
+  <dialog id="index-dialog" class="index-dialog" aria-labelledby="index-title">
+    <div class="dialog-top"><div><p class="dialog-kicker">1821—1881 / A COLEÇÃO COMPLETA</p><h2 id="index-title">Cada selo, um começo.</h2></div><button class="close-button" type="button" data-close aria-label="Fechar índice">×</button></div>
+    <div class="chapter-filters" id="chapter-filters" aria-label="Filtrar por capítulo"></div>
+    <div class="stamp-index" id="stamp-index"></div>
+    <p class="index-note">Escolha um momento para entrar na história.</p>
+  </dialog>
+
+  <dialog id="details-dialog" class="details-dialog" aria-labelledby="details-title">
+    <div class="dialog-top"><div><p class="dialog-kicker" id="details-date"></p><h2 id="details-title"></h2></div><button class="close-button" type="button" data-close aria-label="Fechar detalhes">×</button></div>
+    <div class="detail-content" id="detail-content"></div>
+    <p class="detail-caption">UM FRAGMENTO DA HISTÓRIA DE TIAGO WHITE · SPOT</p>
+  </dialog>
+
+  <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title">
+    <div class="dialog-top"><div><p class="dialog-kicker">SPOT · PG DA IASD DE PINHEIROS</p><h2 id="about-title">Uma história para guardar.</h2></div><button class="close-button" type="button" data-close aria-label="Fechar informações">×</button></div>
+    <p>Vinte e cinco selos para conhecer a trajetória de Tiago Springer White, de 1821 a 1881. Uma experiência preparada para o encontro de 23 de outubro de 2026.</p>
+    <div class="about-section"><h3>Para conduzir o encontro</h3><p>Ative <strong>Dinâmica</strong> para manter cada selo oculto. Conte o acontecimento, pergunte quem reconheceu a cena e então revele a arte. Cada participante guarda seu selo para colar na própria carta ao final.</p><div class="shortcut-list"><span><kbd>←</kbd><kbd>→</kbd> Mudar de marco</span><span><kbd>Espaço</kbd> Revelar / avançar</span><span><kbd>F</kbd> Tela cheia</span><span><kbd>Esc</kbd> Fechar uma janela</span></div></div>
+    <div class="about-section"><h3>Para continuar o estudo</h3><p>O conteúdo parte do roteiro do encontro, com referências adventistas para aprofundamento. Relatos pessoais e religiosos são apresentados no contexto de suas memórias e convicções.</p><div class="reference-list" id="reference-list"></div></div>
+    <p class="about-signature">Guarde o seu selo. Leve esta história com você.</p>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <noscript><div class="noscript-message">Ative o JavaScript para percorrer os 25 marcos desta experiência.</div></noscript>
+</body>
+</html>
