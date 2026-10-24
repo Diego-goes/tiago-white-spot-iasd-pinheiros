@@ -1,5 +1,5 @@
 import {milestones, references} from './data.js';
-import {encontroPhoto} from './encontro.js';
+import {encontroPhotos} from './encontro.js';
 
 const $=id=>document.getElementById(id);
 const pad=n=>String(n).padStart(2,'0');
@@ -210,17 +210,45 @@ async function fullscreen(){
 }
 function hashIndex(){if(location.hash==='#nosso-encontro')return gatheringIndex;const match=location.hash.match(/^#marco-(\d{1,2})$/);return match?Math.max(0,Math.min(24,Number(match[1])-1)):0;}
 
-function prepareGatheringPhoto(){
-  if(!encontroPhoto.src)return;
-  const photo=$('gathering-photo');
-  photo.alt=encontroPhoto.alt;
-  photo.addEventListener('load',()=>{photo.hidden=false;$('gathering-placeholder').hidden=true;if(photo.naturalWidth){document.documentElement.style.setProperty('--photo-ratio',(photo.naturalWidth/photo.naturalHeight).toString());}});
-  photo.addEventListener('error',()=>{photo.hidden=true;$('gathering-placeholder').hidden=false;});
-  photo.src=encontroPhoto.src;
+let gatheringActive=0;
+function prepareGatheringPhotos(){
+  const photos=encontroPhotos.filter(p=>p.src);
+  if(!photos.length)return;
+  const placeholder=$('gathering-placeholder');
+  const dots=$('gathering-dots');
+  const frame=document.querySelector('.gathering-photo-frame');
+  const old=$('gathering-photo');if(old)old.remove();
+  function setRatio(img){if(img.naturalWidth){document.documentElement.style.setProperty('--photo-ratio',(img.naturalWidth/img.naturalHeight).toString());}}
+  const imgs=photos.map((p,i)=>{
+    const img=document.createElement('img');
+    img.alt=p.alt;img.hidden=true;img.loading='lazy';
+    frame.insertBefore(img,placeholder);
+    img.addEventListener('load',()=>{if(i===gatheringActive){placeholder.hidden=true;setRatio(img);}});
+    img.addEventListener('error',()=>{img.remove();});
+    img.src=p.src;return img;
+  });
+  function show(i){
+    gatheringActive=i;
+    imgs.forEach((im,j)=>{if(im.isConnected)im.hidden=j!==i;});
+    const im=imgs[gatheringActive];
+    if(im&&im.complete&&im.naturalWidth){placeholder.hidden=true;setRatio(im);}
+    if(dots&&dots.children.length){[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===i));}
+  }
+  if(photos.length>1&&dots){
+    dots.hidden=false;
+    photos.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.type='button';b.className='gathering-dot';
+      b.setAttribute('aria-label','Foto '+(i+1)+' do encontro');
+      b.addEventListener('click',()=>show(i));
+      dots.appendChild(b);
+    });
+  }
+  show(0);
 }
 
 buildNavigation();
-prepareGatheringPhoto();
+prepareGatheringPhotos();
 nodes.previous.addEventListener('click',()=>go(current-1));
 nodes.next.addEventListener('click',next);
 nodes.mode.addEventListener('click',toggleMode);
