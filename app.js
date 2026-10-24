@@ -214,7 +214,7 @@ function prepareGatheringPhoto(){
   if(!encontroPhoto.src)return;
   const photo=$('gathering-photo');
   photo.alt=encontroPhoto.alt;
-  photo.addEventListener('load',()=>{photo.hidden=false;$('gathering-placeholder').hidden=true;});
+  photo.addEventListener('load',()=>{photo.hidden=false;$('gathering-placeholder').hidden=true;if(photo.naturalWidth){document.documentElement.style.setProperty('--photo-ratio',(photo.naturalWidth/photo.naturalHeight).toString());}});
   photo.addEventListener('error',()=>{photo.hidden=true;$('gathering-placeholder').hidden=false;});
   photo.src=encontroPhoto.src;
 }
