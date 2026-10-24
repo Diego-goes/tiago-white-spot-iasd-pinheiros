@@ -221,7 +221,7 @@ function prepareGatheringPhotos(){
   function setRatio(img){if(img.naturalWidth){document.documentElement.style.setProperty('--photo-ratio',(img.naturalWidth/img.naturalHeight).toString());}}
   const imgs=photos.map((p,i)=>{
     const img=document.createElement('img');
-    img.alt=p.alt;img.hidden=true;img.loading='lazy';
+    img.alt=p.alt;img.hidden=true;
     frame.insertBefore(img,placeholder);
     img.addEventListener('load',()=>{if(i===gatheringActive){placeholder.hidden=true;setRatio(img);}});
     img.addEventListener('error',()=>{img.remove();});
@@ -243,6 +243,16 @@ function prepareGatheringPhotos(){
       b.addEventListener('click',()=>show(i));
       dots.appendChild(b);
     });
+    const nav=document.createElement('div');
+    nav.className='gathering-nav';
+    [['‹','anterior',-1],['›','próxima',1]].forEach(([label,dir,step])=>{
+      const n=document.createElement('button');
+      n.type='button';n.className='gathering-nav-btn';n.innerHTML=label;
+      n.setAttribute('aria-label','Foto '+dir);
+      n.addEventListener('click',()=>show((gatheringActive+step+photos.length)%photos.length));
+      nav.appendChild(n);
+    });
+    frame.appendChild(nav);
   }
   show(0);
 }
